@@ -1,0 +1,8 @@
+<% ordered_dogs = @dogs.sort_by do |dog|
+dog.employees.count
+end.reverse %>
+
+<% ordered_dogs.each do |dog|%>
+<h1> <%= link_to dog.name, dog_path(dog) %> </h1>
+    <p> Employee Count: <%= dog.employees.count %></p>
+<% end %>
